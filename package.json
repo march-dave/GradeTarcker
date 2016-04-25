@@ -15,9 +15,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CodingHouseFI/todo-from-scratch/issues"
+    "url": "https://github.com/arch-dave/GradeTarcker/issues"
   },
-  "homepage": "https://github.com/CodingHouseFI/todo-from-scratch#readme",
+  "homepage": "https://github.com/arch-dave/GradeTarcker#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
     "ejs": "^2.4.1",
