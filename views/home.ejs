@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade Tracker</title>
+
+  <!-- <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/moment/moment.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <script src="home.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Grade Tracker</h1>
+
+    <button class="btn btn-default btn-primary newGrade">New Grade</button>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th class='id'>id</th>
+          <th>name</th>
+          <th>score</th>
+          <th>total</th>
+          <th>grade</th>
+          <th>delete</th>
+        </tr>
+      </thead>
+      <tbody class='gradeList'>
+
+        <% for(var i = 0; i < grades.length; i++) { %>
+          <tr data-id=<%=grades[i].id%>  >
+            <td class='id'><%= grades[i].id %></td>
+            <td><%= grades[i].name %></td>
+            <td><%= grades[i].score %></td>
+            <td><%= grades[i].total %></td>
+            <td><%= grades[i].grade %></td>
+            <td><input type='checkbox' name='' id='' class='isDelete'></td>
+          </tr>
+        <%  }  %>
+
+      <tr class='template'>
+        <td class='id'></td>
+        <td class='name'></td>
+        <td class='score'></td>
+        <td class='total'></td>
+        <td class='grade'></td>
+        <td><input type='checkbox' name='' id='' class='isDelete'></td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <form class='newGradeForm'>
+  		      <div class="modal-header">
+  		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  		        <h4 class="modal-title" id="myModalLabel">Grade</h4>
+  		      </div>
+  		      <div class="modal-body" style="padding: 40px 100px">
+
+              <div id='id'></div>
+
+  			      <div class="form-group id">
+  			      	<label for="exampleInputName2">id</label>
+  			      	<input type="text" class="form-control" id="id" placeholder="Auto Generate" readonly="true">
+  			      </div>
+  			      <div class="form-group">
+  			      	<label for="exampleInputName2">name</label>
+  			      	<input type="text" class="form-control" id="name" placeholder="spelling test">
+  			      </div>
+  			      <div class="form-group">
+  			      	<label for="exampleInputName2">score</label>
+  			      	<input type="text" class="form-control" id="score" placeholder="95">
+  			      </div>
+  			      <div class="form-group">
+  			      	<label for="exampleInputName2">total</label>
+  			      	<input type="text" class="form-control" id="total" placeholder="95">
+  			      </div>
+
+              <div class="form-group">
+  			      	<label for="exampleInputName2">grade</label>
+  			      	<input type="text" class="form-control" id="grade" placeholder="A">
+  			      </div>
+  		      </div>
+
+  		      <div class="modal-footer">
+  		        <button type="submit" class="btn btn-primary" id="btnSave">Save</button>
+  		        <button type="button" class="btn btn-default" data-dismiss="modal" id="btnUpdate">Update</button>
+  		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  		      </div>
+          </form>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+</body>
+</html>
